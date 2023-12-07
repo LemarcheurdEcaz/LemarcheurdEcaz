@@ -28,4 +28,33 @@ ul li {
     margin-bottom: 5px;
 }
 
-/* Ajoute d'autres styles si nécessaire */
+/* Ajout de la barre dégradée à gauche */
+.cv-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px; /* Largeur de la barre */
+    background: linear-gradient(to bottom, #3498db, #2c3e50); /* Dégradé de bleu */
+    z-index: -1;
+  }
+  
+  /* Style pour les sections d'expériences professionnelles */
+  .experience-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .experience-list li {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .experience-list li:before {
+    content: "\2022"; /* Utilise un cercle pour le style des puces */
+    position: absolute;
+    left: -20px; /* Ajuste l'emplacement du cercle */
+    color: #3498db;
+  }
