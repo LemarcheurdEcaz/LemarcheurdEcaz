@@ -1,67 +1,126 @@
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  margin: 20px;
+/* GENERAL */
+*{
+  margin: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #3498db;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+body{
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 1.5;
 }
 
-h1, h2 {
-  color: #2c3e50;
+a{
+  text-decoration: none;
+  color: #4472C4;
 }
 
-section {
-  margin-bottom: 20px;
+a:hover{
+  text-decoration: underline;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+p{
+  margin: 0 0 1rem;
 }
 
-ul li {
-  margin-bottom: 8px; /* Légèrement augmenté l'espacement entre les éléments de liste */
+h1{
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
 }
 
-/* Ajout de la barre dégradée à gauche */
-.cv-container::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 10px; /* Largeur de la barre */
-  background: linear-gradient(to bottom, #3498db, #2c3e50); /* Dégradé de bleu */
-  z-index: -1;
+h2{
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-/* Style pour les sections d'expériences professionnelles */
-.experience-list {
+.text-blue{
+  color: #4472C4;
+}
+
+.text-darkblue{
+  color: #002060;
+}
+
+.text-uppercase{
+  text-transform: uppercase; 
+}
+
+.icon{
+  margin-right: .5rem;
+}
+
+.cv-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "left-column right-column right-column";
+  width: 1200px;
+  margin: 100px auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.section{
+  margin-bottom: 1.5rem;
+}
+
+/* LEFT COLUMN */
+.left-column{
+  grid-area: left-column;
+  padding: 50px;
+  background-color: #4472C4;
+  color: white;
+}
+
+.portait{
+  border-radius: 50%;
+  max-width: 150px;
+  margin: auto;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.skills{
   list-style-type: none;
   padding: 0;
-  margin-top: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 1rem;
 }
 
-.experience-list li {
-  position: relative;
-  margin-bottom: 15px;
+/* RIGHT COLUMN */
+.right-column{
+  grid-area: right-column;
+  display: grid;
+  grid-template-rows: 250px 1fr;
+  grid-template-areas: 
+    "header"
+    "content";
 }
 
-.experience-list li:before {
-  content: "\2022"; /* Utilise un cercle pour le style des puces */
-  position: absolute;
-  left: -20px; /* Ajuste l'emplacement du cercle */
-  color: #3498db;
+/* HEADER */
+.header{
+  grid-area: header;
+  padding: 50px;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Style pour la photo en cercle en haut à gauche */
-.portrait {
-  border-radius: 50%;
-  max-width: 100px; /* Ajustez la taille de l'image selon vos préférences */
-  margin: 20px;
+.infos{
+  columns: 2;
+  list-style-type: none;
+  padding: 0;
 }
+
+/* CONTENT */
+.content{
+  grid-area: content;
+  padding: 50px;
+}
+
+.experience-list{
+  list-style-type: circle;
+}}
