@@ -58,3 +58,7 @@ ul li {
     left: -20px; /* Ajuste l'emplacement du cercle */
     color: #3498db;
   }
+  .section img {
+    max-width: 100%;
+    height: auto;
+  }
