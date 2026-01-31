@@ -1,249 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Curriculum vitae</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latin-modern-web@1.0.0/style/lmodern.latin-modern.css">
     <style>
-        /* GENERAL */
-        *{
-          margin: 0;
-          box-sizing: border-box;
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --accent-color: #002147; /* Bleu Oxford */
+            --separator: #d1d1d1;
         }
-        
-        body{
-          font-family: Roboto;
-          font-weight: 300;
-          font-size: .9rem;
-          line-height: 1.5;
+
+        body {
+            font-family: 'Latin Modern Roman', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
-        
-        a{
-          text-decoration: none;
-          color: #4472C4;
+
+        .container {
+            max-width: 800px;
+            padding: 60px 20px;
         }
-        
-        a:hover{
-          text-decoration: underline;
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        
-        p{
-          margin: 0 0 1rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--separator);
+            display: inline-block;
+            padding-bottom: 10px;
         }
-        
-        h1{
-          margin: 0 0 1rem;
-          font-size: 2.5rem;
-          margin-bottom: .5rem;
+
+        nav {
+            margin-top: 20px;
+            font-variant: small-caps;
         }
-        
-        h2{
-          margin: 0 0 1rem;
-          letter-spacing: 1px;
-          text-transform: uppercase;
+
+        nav a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin: 0 15px;
+            font-size: 1.1rem;
         }
-        
-        .text-blue{
-          color: #4472C4;
+
+        section {
+            margin-bottom: 40px;
+            text-align: justify;
         }
-        
-        .text-darkblue{
-          color: #002060;
+
+        h2 {
+            font-variant: small-caps;
+            color: var(--accent-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
         }
-        
-        .text-uppercase{
-          text-transform: uppercase; 
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
-        
-        .icon{
-          margin-right: .5rem;
+
+        .project-tag {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
         }
-        
-        .cv-container{
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-areas: "left-column right-column right-column";
-          width: 1200px;
-          margin: 100px auto;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--separator);
+            padding-top: 20px;
+            color: #777;
         }
-        
-        .section{
-          margin-bottom: 1.5rem;
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
         }
-        
-        /* LEFT COLUMN */
-        .left-column{
-          grid-area: left-column;
-          padding: 50px;
-          background-color: #0b1aa1;
-          color: white;
-        }
-        
-        .portrait {
-          border-radius: 30% 70% 70% 30%;
-          max-width: 50px;
-          margin: 20px; /* Ajuste la marge pour l'espacement autour de la photo */
-          display: block;
-        }
-        
-        .skills{
-          list-style-type: none;
-          padding: 0;
-          font-size: 1.1rem;
-          letter-spacing: 1px;
-          margin: 0 0 1rem;
-        }
-        
-        /* RIGHT COLUMN */
-        .right-column{
-          grid-area: right-column;
-          display: grid;
-          grid-template-rows: 250px 1fr;
-          grid-template-areas: 
-            "header"
-            "content";
-        }
-        
-        /* HEADER */
-        .header{
-          grid-area: header;
-          padding: 50px;
-          background-color: #F2F2F2;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        
-        .infos{
-          columns: 2;
-          list-style-type: none;
-          padding: 0;
-        }
-        
-        /* CONTENT */
-        .content{
-          grid-area: content;
-          padding: 50px;
-        }
-        
-        .experience-list{
-          list-style-type: circle;
-        }
-        </style>
-  </head>
-  <body>
-      <div class="cv-container">
-        <div class="left-column">
-          <img class="portait" src="Images/PhotoEnzo.jpeg" />
-          <div class="section">
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Prénom Nom</h1>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Projets</a>
+            <a href="#">CV</a>
+        </nav>
+    </header>
+
+    <section id="cesure">
+        <h2>Expérience de Césure</h2>
+        <p>
+            Durant mon année de césure, j'ai choisi de m'immerger dans [Domaine, ex: la recherche en physique théorique]. 
+            Ce projet m'a permis de développer une rigueur d'analyse et une autonomie cruciale, notamment à travers 
+            [action concrète, ex: la modélisation de systèmes complexes]. Cette période a été le pont entre 
+            mes acquis théoriques et les réalités du terrain.
+        </p>
+        <span class="project-tag">#Recherche #Autonomie #Ingénierie</span>
+    </section>
+
+    <section id="associatif">
+        <h2>Engagements Associatifs</h2>
+        <p>
+            Convaincu que l'excellence académique ne va pas sans engagement social, j'ai rejoint [Nom de l'association]. 
+            En tant que [Poste], j'ai coordonné des équipes pour [Mission principale]. Cette expérience a affiné mes 
+            compétences en leadership et ma capacité à résoudre des problèmes dans des contextes à forts enjeux.
+        </p>
+    </section>
+
+    <div class="grid">
+        <section id="arts">
+            <h2>Passions Artistiques</h2>
             <p>
-              <i class="icon fab fa-linkedin text-darkblue"></i> Enzo-Trouvé
+                La pratique de [Musique/Dessin/etc.] est pour moi un vecteur d'exploration créative. Elle nourrit ma 
+                capacité de visualisation, un atout que je réinvestis dans mes projets de programmation avec Manim.
             </p>
-          </div>
-          <div class="section">
-            <h2>À PROPOS</h2>
+        </section>
+
+        <section id="sports">
+            <h2>Discipline Sportive</h2>
             <p>
-                Etudiant à la Prépa des INP à Toulouse. Très curieux à propos des
-                questions de cosmologie et d’astrophysique, je suis également très
-                intéressé par le fait d’expérimenter différentes façons de voir le monde,
-                que ce soit à travers la science avec la neurologie ou la mécanique
-                quantique, ou à travers la perception avec le sport et la musique.            </p>
-          </div>
-          <div class="section">
-            <h2>COMPÉTENCES</h2>
-            <ul class="skills">
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>PSC1 ( brevet de premiers secours )</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>Permis de conduire voiture</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>Permis bateaux à moteurs</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>Bases des langages Python et LaTex</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>Bases de Matlab</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> <strong>Pack office & Google workspace</strong></li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i>Ouverture d’esprit</li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> Coopération et travail en équipe</li>
-              <li><i class="icon fas fa-check-circle text-darkblue"></i> Git &#124; Github</li>
-            </ul>
-          </div>
-          <div class="section">
-            <h2>Langues</h2>
-            <p>
-              Français, langue maternelle
-              <br>
-              Anglais, compétence professionnelle
-              <br>
-              Espagnol, intermédiaire
+                [Sport, ex: L'aviron ou l'Escrime] m'a enseigné la persévérance et le dépassement de soi. 
+                C'est dans cette discipline que je puise l'énergie nécessaire pour mener à bien des projets de longue haleine.
             </p>
-          </div>
-          <div class="section">
-            <h2>Centres d'intérêt</h2>
-            <p>
-              Voile - Niveau 4 FFV (moniteur) en catamaran
-              <br>
-              Judo ( ceinture noire )
-              <br>
-              Piano
-              <br>
-              Course à pied - entraînement pour le marathon de Barcelone 2024
-              <br>
-              Escalade et slackline
-            </p>
- 
-          </div>
-        </div>
-        <div class="right-column">
-          <div class="header">
-            <h1>Enzo <span class="text-blue text-uppercase">Trouvé</span></h1>
-            <p>Etudiant ingénieur</p>
-            <ul class="infos">
-              <li><i class="icon fas fa-at text-blue"></i> <a href="mailto:enzo.trouve8004@gmail.com">enzo.trouve8004@gmail.com</a></li>
-              <li><i class="icon fas fa-phone text-blue"></i> 07 67 52 72 56</li>
-              <li><i class="icon fas fa-map-marker-alt text-blue"></i> 7 rue du prieuré, 31 000 Toulouse</li>
-            </ul>
-          </div>
-          <div class="content">
-            <div class="section">
-              <h2>Expériences <br><span class="text-blue">professionelles</span></h2>
-              <ul class="experience-list">
-                <li>Journée "Étonnante chimie" : présentation devant 50 personnes,
-                dont des chercheurs du mécanisme d'action d'un remède potentiel à la
-                maladie d'Alzheimer - 2022</li>
-                <li>Grand Oral : projet en collaboration avec un astronome de
-                l'Observatoire de Paris pour comprendre le fonctionnement des pulsars
-                et calculer leur distance par effet Doppler - 2022</li>
-                <li>Club d'astronomie : Rencontre avec des chercheurs du CNES
-                travaillant sur le module ChemCam du rover Persévérance actuellement
-                sur Mars - 2022</li>
-                <li>Stage à l'INRA (Institut National de Recherche Agronomique) :
-                découverte de la génétique et premier pas dans le domaine de la
-                recherche - 2019</li>
-                <li>Camp d'été d'une semaine : "La ferme des étoiles" : apprentissage
-                des bases de l'observation astronomique - 2019</li>
-              </ul>
-            </div>
-            <div class="section">
-              <h2>Études <br><span class="text-blue">& formations</span></h2>
-              <p>
-                <strong>2022 <i class="fas fa-long-arrow-alt-right"></i> 2024 </strong>
-                <br>
-                <em>Deuxième année à la Prépa des INP à Toulouse
-                    (prépa école d’ingénieur)</em>
-                <strong>2019 <i class="fas fa-long-arrow-alt-right"></i> 2022 </strong>
-                <br>
-                <em>Baccalauréat mention très bien, spécialités mathématiques et
-                    physique, option mathématiques expertes, au lycée Pierre de Fermat de Toulouse</em>
-            </div>
-            <div class="section">
-              <h2><span class="text-blue">Voyages</span></h2>
-              <p>
-                Découverte d’autres cultures et
-                religions en Égypte, Indonésie,
-                Grèce, et Angleterre; ouverture à d'autres modes de vie et de pensée que le monde occidental.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </body>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Généré avec soin pour un profil académique</p>
+    </footer>
+</div>
+
+</body>
+</html>
